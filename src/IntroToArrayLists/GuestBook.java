@@ -38,18 +38,18 @@ public class GuestBook implements ActionListener {
 		gb.setup();
 	}
 	
-	String person;
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		String person;
 		if(e.getSource()==add) {
 			person = JOptionPane.showInputDialog("Enter a name to add to your guest book.");
-			 names.add(person);
+			names.add(person);
 		}
-		for(String name : names) {
+		for(int i =0; i<names.size(); i++) {
 		if(e.getSource()==view) {
-			JOptionPane.showMessageDialog(null, "Guest #" +  + ": " + person );
+			JOptionPane.showMessageDialog(null, "Guest #" + (i + 1) + ": " + names.get(i) );
 		}
 		}
 	}
